@@ -1,0 +1,19 @@
+.header {
+
+  .header-title {
+    text-align: center;
+    position: relative;
+  }
+
+  .icon {
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    line-height: 30px;
+    cursor: pointer;
+  }
+
+}
