@@ -1,6 +1,6 @@
 # hm-react
 
-learn react
+learn react update
 
 # Getting Started with Create React App
 
