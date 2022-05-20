@@ -3,23 +3,22 @@ import React, { useRef } from "react";
 import "./addinput.scss";
 
 function AddInput(props) {
-  const { isInputShow } = props,
+  const { isInputShow, addItem } = props,
     inputRef = useRef();
 
-  const submitClick = () => {
+  const submitValue = () => {
     const inputValue = inputRef.current.value;
     if (!inputValue.trim()) {
-      console.log("nothing");
       return;
     } else {
-      console.log(`提交了${inputValue.trim()}`);
+      addItem(inputValue.trim());
     }
   };
 
   return isInputShow ? (
     <div className="addinput">
       <input type="text" ref={inputRef} placeholder="请输入代办事件" />
-      <button className="btn btn-primary" onClick={submitClick}>
+      <button className="btn btn-primary" onClick={submitValue}>
         增加
       </button>
     </div>

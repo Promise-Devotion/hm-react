@@ -1,0 +1,22 @@
+.todo-item {
+  .btn-group {
+    display: inline-block;
+
+    .btn {
+      border: none;
+
+    }
+
+    .btn-primary {
+      background-color: aqua;
+    }
+
+    .btn-warning {
+      background-color: orange;
+    }
+
+    .btn-danger {
+      background-color: red;
+    }
+  }
+}
