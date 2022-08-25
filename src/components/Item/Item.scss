@@ -1,0 +1,19 @@
+.item-contain {
+  position: relative;
+  line-height: 30px;
+  list-style: none;
+  border-bottom: 1px solid #eeeeee;
+  margin-bottom: 4px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+
+  .button {
+    position: absolute;
+    right: 20px;
+  }
+}
+
+.light {
+  background-color: orange;
+}
