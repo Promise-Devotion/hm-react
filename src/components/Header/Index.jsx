@@ -1,38 +1,15 @@
-import React, { Component } from "react";
-import { nanoid } from "nanoid";
+import React from "react";
 import "./header.scss";
+import { useBearStore } from "../../store";
 
-class Index extends Component {
-  handleKeyUp = (event) => {
-    if (event.keyCode === 13) {
-      console.log(event.target.value);
-
-      // 数据校验
-      if (!event.target.value.trim()) {
-        alert("数据不能为空");
-        return;
-      }
-      const obj = {
-        id: nanoid(),
-        name: event.target.value,
-        done: false,
-      };
-      this.props.addTodo(obj);
-      event.target.value = "";
-    }
-  };
-
-  render() {
-    return (
-      <div className="header-contain">
-        <input
-          className="header-input"
-          type="text"
-          onKeyUp={this.handleKeyUp}
-        />
-      </div>
-    );
-  }
+export default function Index() {
+  const count1 = useBearStore((state) => state.count);
+  return (
+    <div className="header-contain">
+      <input className="header-input" type="text" />
+      <span>{count1}</span>
+    </div>
+  );
 }
 
-export default Index;
+// export default Index;
