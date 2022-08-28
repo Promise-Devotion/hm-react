@@ -9,7 +9,6 @@ export default class List extends Component {
     deletetodo: PropTypes.func,
   };
   render() {
-    console.log(this.props);
     const { todos, updateTodo, deletetodo } = this.props;
     return (
       <ul>

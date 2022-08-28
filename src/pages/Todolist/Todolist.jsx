@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Header from "../../components/Top";
 import List from "../../components/List/List";
 import Footer from "../../components/Footer/Footer";
+import axios from "axios";
 
 export default class Todolist extends Component {
   state = {
@@ -12,9 +13,22 @@ export default class Todolist extends Component {
       { id: "0003", name: "踢足球", done: true },
       { id: "0004", name: "逛街", done: false },
     ],
+    list: [],
+  };
+  // 生命周期钩子componentDidMount 请求数据
+  componentDidMount() {
+    this.getList();
+  }
+  getList = () => {
+    const baseUrl = "http://127.0.0.1:5000/api";
+    const url = `${baseUrl}/users/test?name=aaa`;
+    axios.get(url).then((res) => {
+      const oldData = this.state.list;
+      const newList = [...oldData, ...res.data.data.list]; // list.push(list, res.data.data.list);
+      this.setState({ list: newList });
+    });
   };
   addTodo = (data) => {
-    console.log(data);
     const todaData = this.state.todos;
     const newData = [...todaData, data];
     this.setState({ todos: newData });
@@ -55,8 +69,13 @@ export default class Todolist extends Component {
     this.setState({ todos: newTodo });
   };
   render() {
+    const { list } = this.state;
+    console.log(this.state);
     return (
       <div className="app-container">
+        {list.map((value, key) => {
+          return <p key={key}>{value.name}</p>;
+        })}
         <Header addTodo={this.addTodo} />
         <List
           todos={this.state.todos}
