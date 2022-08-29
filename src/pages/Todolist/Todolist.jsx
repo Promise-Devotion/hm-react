@@ -21,10 +21,10 @@ export default class Todolist extends Component {
   }
   getList = () => {
     const baseUrl = "http://127.0.0.1:5000/api";
-    const url = `${baseUrl}/users/test?name=aaa`;
+    const url = `${baseUrl}/users/userlist?name=jim`;
     axios.get(url).then((res) => {
       const oldData = this.state.list;
-      const newList = [...oldData, ...res.data.data.list]; // list.push(list, res.data.data.list);
+      const newList = [...oldData, ...res.data.data]; // list.push(list, res.data.data.list);
       this.setState({ list: newList });
     });
   };

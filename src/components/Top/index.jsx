@@ -25,11 +25,23 @@ class Index extends Component {
   render() {
     return (
       <div className="header-contain">
-        <input
-          className="header-input"
-          type="text"
-          onKeyUp={this.handleKeyUp}
-        />
+        <a
+          href="#!"
+          onClick={(e) => {
+            e.preventDefault();
+          }}
+        >
+          登录
+        </a>
+        /
+        <a
+          href="#!"
+          onClick={(e) => {
+            e.preventDefault();
+          }}
+        >
+          注册
+        </a>
       </div>
     );
   }
