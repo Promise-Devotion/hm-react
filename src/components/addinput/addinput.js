@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 
 import "./addinput.scss";
 
-function AddInput(props) {
+export default function AddInput(props) {
   const { isInputShow, addItem } = props,
     inputRef = useRef();
 
@@ -27,4 +27,3 @@ function AddInput(props) {
   );
 }
 
-export default AddInput;

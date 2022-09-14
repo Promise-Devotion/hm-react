@@ -11,7 +11,6 @@ export default function Blogs() {
   const url = `${baseUrl}/users/test?name=aaa`;
   const getList = async () => {
     await axios.get(url).then((res) => {
-      // const oldData = list;
       let newList = [...list, ...res.data.data.list]; // list.push(list, res.data.data.list);
       setList(newList);
       console.log(list);
@@ -20,8 +19,6 @@ export default function Blogs() {
   useEffect(() => {
     getList();
   }, []);
-
-  // const { data } = useSWR("127.0.0.1:5000/api/users/test", getfunc);
 
   return (
     <div className="blogs-contain">
