@@ -1,22 +1,22 @@
-import axios from 'axios';
-import React, { Component } from 'react';
+import axios from "axios";
+import React, { Component } from "react";
 
 export default class Register extends Component {
   state = {
-    name: '',
-    email: '',
-    password: '',
+    name: "",
+    email: "",
+    password: "",
   };
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log('注册');
+    console.log("注册");
     const obj = {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
     };
     console.log(obj);
-    const baseUrl = 'http://127.0.0.1:5000/api';
+    const baseUrl = "http://127.0.0.1:5000/api";
     const url = `${baseUrl}/users/register`;
     axios.post(url, obj).then((res) => {
       alert(res);
@@ -28,7 +28,7 @@ export default class Register extends Component {
       [title]: event.target.value,
     });
   };
-  render () {
+  render() {
     return (
       <div className="register-contain">
         <p>注册</p>
