@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { Outlet, Link } from "react-router-dom";
-import "./index.scss";
+import React, { Component } from 'react';
+import { Outlet, Link } from 'react-router-dom';
+import './index.scss';
 
 export default class Layout extends Component {
-  render() {
+  render () {
     return (
       <>
         <nav className="nav-contain">

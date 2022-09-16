@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { nanoid } from "nanoid";
-import "./top.scss";
+import React, { Component } from 'react';
+import { nanoid } from 'nanoid';
+import './top.scss';
 
 class Index extends Component {
   handleKeyUp = (event) => {
@@ -9,7 +9,7 @@ class Index extends Component {
 
       // 数据校验
       if (!event.target.value.trim()) {
-        alert("数据不能为空");
+        alert('数据不能为空');
         return;
       }
       const obj = {
@@ -18,11 +18,11 @@ class Index extends Component {
         done: false,
       };
       this.props.addTodo(obj);
-      event.target.value = "";
+      event.target.value = '';
     }
   };
 
-  render() {
+  render () {
     return (
       <div className="header-contain">
         <a

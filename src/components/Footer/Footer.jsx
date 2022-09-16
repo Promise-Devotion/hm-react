@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import "./index.scss";
+import React, { Component } from 'react';
+import './index.scss';
 
 export default class Footer extends Component {
   toogleChange = (event) => {
@@ -9,7 +9,7 @@ export default class Footer extends Component {
   clearAllDone = () => {
     this.props.clearAllDone();
   };
-  render() {
+  render () {
     const { todos } = this.props;
     const doneCount = todos.reduce(
       (pre, current) => pre + (current.done ? 1 : 0),
@@ -22,7 +22,7 @@ export default class Footer extends Component {
         <label htmlFor="">
           <input
             type="checkbox"
-            checked={doneCount === count ? true : false}
+            checked={doneCount === count}
             onChange={this.toogleChange}
           />
         </label>

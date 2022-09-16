@@ -1,17 +1,15 @@
-import React from "react";
-import { useState, useRef, useEffect } from "react";
+// import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
-export default function Nopage() {
-  /**
-   * 在这里做一个倒计时demo，开始 暂停，继续，重置，结束
-   */
+export default function Nopage () {
+  // 在这里做一个倒计时demo，开始 暂停，继续，重置，结束
   // 1、定义一个倒计时时间
   const [count, setCount] = useState(10);
   const [intervalid, setIntervalId] = useState(null);
-  const [paused, setPaused] = React.useState(false);
+  const [paused, setPaused] = useState(false);
   const savedCallback = useRef();
 
-  function callback() {
+  function callback () {
     if (paused) {
       return;
     }
@@ -32,7 +30,7 @@ export default function Nopage() {
   });
 
   useEffect(() => {
-    function tick() {
+    function tick () {
       savedCallback.current();
     }
 
@@ -47,7 +45,7 @@ export default function Nopage() {
         <p>{count}</p>
         <div>
           <button onClick={() => setPaused(!paused)}>
-            {paused ? "Resume" : "Pause"}
+            {paused ? 'Resume' : 'Pause'}
           </button>
           <button onClick={() => reset()}>Restart</button>
         </div>
