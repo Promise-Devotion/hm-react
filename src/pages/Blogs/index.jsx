@@ -1,13 +1,13 @@
 // import React from 'react';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 // import { QueryClient, QueryClientProvider } from "react-query";
-import axios from 'axios';
+import axios from "axios";
 
 // const queryClient = new QueryClient();
 
-export default function Blogs () {
+export default function Blogs() {
   const [list, setList] = useState([]);
-  const baseUrl = 'http://127.0.0.1:5000/api';
+  const baseUrl = "http://127.0.0.1:5000/api";
   const url = `${baseUrl}/users/test?name=aaa`;
   const getList = async () => {
     await axios.get(url).then((res) => {
@@ -17,7 +17,7 @@ export default function Blogs () {
     });
   };
   useEffect(() => {
-    getList();
+    // getList();
   }, []);
 
   return (

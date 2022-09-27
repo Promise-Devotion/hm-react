@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import { Outlet, Link } from 'react-router-dom';
-import './index.scss';
+import React, { Component } from "react";
+import { Outlet, Link } from "react-router-dom";
+import "./index.scss";
 
 export default class Layout extends Component {
-  render () {
+  render() {
     return (
       <>
         <nav className="nav-contain">
           <ul>
             <li className="router-item">
-              <Link to="/">Home</Link>
+              <Link to="/home">Home</Link>
             </li>
             <li className="router-item">
               <Link to="/blogs">Blogs</Link>
