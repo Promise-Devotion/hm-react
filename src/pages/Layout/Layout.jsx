@@ -26,6 +26,9 @@ export default class Layout extends Component {
             <li className="router-item">
               <Link to="register">注册</Link>
             </li>
+            <li className="router-item">
+              <Link to="component">组件学习</Link>
+            </li>
           </ul>
         </nav>
         <hr />

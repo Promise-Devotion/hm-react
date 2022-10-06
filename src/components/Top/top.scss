@@ -1,10 +1,24 @@
 .header-contain {
   width: 100%;
   margin-bottom: 10px;
-
+  background-color: azure;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  .logo-contain {
+    img {
+      display: inline-block;
+      width: 26px;
+      height: 26px;
+      margin-right: 10px;
+    }
+    .app-name {
+      font-weight: 500;
+      color: orange;
+    }
+  }
   .header-input {
     display: block;
     width: 100% !important;
   }
-
 }

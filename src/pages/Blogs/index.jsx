@@ -22,7 +22,7 @@ export default function Blogs() {
 
   return (
     <div className="blogs-contain">
-      <p>blogs</p>
+      <p>学习 ajax请求在react中的使用</p>
       <div>
         {list ? (
           list.map(function (value, key) {

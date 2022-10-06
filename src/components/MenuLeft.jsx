@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Menu } from "antd";
+import Basic from "../pages/Home/BasicKnowledge/Basic/Basic";
 // import {
 //   AppstoreOutlined,
 //   MailOutlined,
@@ -15,21 +16,22 @@ class SiderLeft extends Component {
     this.state = {
       items: [
         {
-          key: "/home",
+          key: "/base",
           icon: React.createElement(UserOutlined),
           label: "概览",
         },
         {
-          key: "/home/user",
+          key: "/base/user",
           icon: React.createElement(UserOutlined),
           label: "React Hooks",
           children: [
             {
-              key: "/basic",
+              key: "/base/basic",
               label: "基础知识",
+              element: Basic,
             },
             {
-              key: "/home/user/auth",
+              key: "/base/user/auth",
               label: "权限设置",
             },
           ],
@@ -40,8 +42,8 @@ class SiderLeft extends Component {
 
   click = (e) => {
     console.log(e);
-    console.log(e.key);
     //注意this指向问题，采用箭头函数this就指向当前组件
+    debugger;
     this.props.to(e.key);
   };
 

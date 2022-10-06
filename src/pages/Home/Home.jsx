@@ -1,12 +1,24 @@
 import React from "react";
-import NavigateCompont from "../../components/MenuLeft";
-import { Outlet } from "react-router";
+import { Link, Outlet } from "react-router-dom";
+
+import "./home.scss";
 
 export default function Home() {
   return (
-    <div>
-      <NavigateCompont></NavigateCompont>
-      <Outlet></Outlet>
+    <div className="home-contain">
+      <div className="home-left">
+        <nav>
+          <li>
+            <Link to="basic">basic</Link>
+          </li>
+          <li>
+            <Link to="new">new</Link>
+          </li>
+        </nav>
+      </div>
+      <div className="right-contain">
+        <Outlet />
+      </div>
     </div>
   );
 }
