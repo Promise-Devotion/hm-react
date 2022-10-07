@@ -1,4 +1,5 @@
 @import "antd/dist/antd.css";
+@import "./assets/css/common.scss";
 /* @import "./assets/css/styles.scss"; */
 body {
   margin: 0;

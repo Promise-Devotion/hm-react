@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav className="top-nav">
       {/* <Link to="/">Home</Link> */}
       {/* <Link to="/about">About</Link> */}
-      <NavLink style={navLinkStyles} to="/">
+      <NavLink style={navLinkStyles} to="/home">
         Home
       </NavLink>
       <NavLink style={navLinkStyles} to="/noPage">
