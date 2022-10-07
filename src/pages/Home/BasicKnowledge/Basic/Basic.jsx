@@ -1,5 +1,5 @@
 import React from "react";
-import "./Basic.scss"
+import "./Basic.scss";
 
 export default function Basic(params) {
   return (
