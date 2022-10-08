@@ -9,7 +9,8 @@ import Navbar from "./components/Navbar";
 import Blogs from "./pages/Blogs";
 // import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
-// import Register from "./pages/register";
+import Register from "./pages/register";
+import ZustandComponent from "./pages/Zustand";
 // import LearnComponent from "./pages/LearnComponent";
 import Basic from "./pages/Home/BasicKnowledge/Basic/Basic";
 import ComponentCommunication from "./pages/Home/BasicKnowledge/ComponentCommunication";
@@ -44,6 +45,8 @@ export default function App() {
         </Route>
         <Route path="noPage" element={<NoPage />} />
         <Route path="blogs" element={<Blogs />} />
+        <Route path="register" element={<Register />} />
+        <Route path="zustand" element={<ZustandComponent />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       {/* <Routes>

@@ -19,6 +19,12 @@ const Navbar = () => {
       <NavLink style={navLinkStyles} to="/noPage">
         NoPage
       </NavLink>
+      <NavLink style={navLinkStyles} to="/register">
+        register
+      </NavLink>
+      <NavLink style={navLinkStyles} to="/zustand">
+        zustand
+      </NavLink>
     </nav>
   );
 };
