@@ -1,19 +1,16 @@
-import React from "react";
+import React, {useContext} from "react";
 import { PersonContext } from "../../pages/Home/BasicKnowledge/ComponentCommunication/descendant";
 
 export default function DescendantChild(params) {
-  // const { person } = useContext();
-  const contextType = PersonContext;
-  console.log(PersonContext.value);
+  const { person } = useContext(PersonContext);
+  const {name, age, school} = person
+  // const contextType = PersonContext;
+  console.log(person);
   return (
-    <PersonContext.Consumer>
-      {({ name, age, school }) => {
-        <div>
-          <span>{name}</span>
-          <span>{age}</span>
-          <span>{school}</span>
-        </div>;
-      }}
-    </PersonContext.Consumer>
+      <div>
+        <p><span>{name}</span></p>
+        <p><span>{age}</span></p>
+        <p><span>{school}</span></p>
+      </div>
   );
 }

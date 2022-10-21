@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import logoImg from "../../assets/img/swallow.jpg";
 import { useTitleStore } from "../../store/header";
 import "./top.scss";
 
-function Index() {
+export default function Index() {
   let color = useTitleStore((state) => state.color);
 
   return (
@@ -37,4 +37,3 @@ function Index() {
   );
 }
 
-export default Index;
