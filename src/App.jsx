@@ -1,10 +1,10 @@
 // import ReactDOM from 'react-dom/client';
 import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 // import { routes useRoutes} from "@/router";
+import Navbar from "./components/Navbar";
 import Header from "./components/Top/index";
 import Home from "./pages/Home/Home";
-import Navbar from "./components/Navbar";
 // import Todolist from "./pages/Todolist/Todolist";
 import Blogs from "./pages/Blogs";
 // import Contact from "./pages/Contact";
@@ -12,13 +12,16 @@ import NoPage from "./pages/NoPage";
 import Register from "./pages/register";
 import ZustandComponent from "./pages/Zustand";
 // import LearnComponent from "./pages/LearnComponent";
+import Charts from "./pages/Charts";
+import LineChart from "./pages/Charts/ChartsComponent/lineChart";
+import CanvasConponent from "./pages/Charts/ChartsComponent/canvasComponent";
 import Basic from "./pages/Home/BasicKnowledge/Basic/Basic";
 import ComponentCommunication from "./pages/Home/BasicKnowledge/ComponentCommunication";
-import ParentToChild from "./pages/Home/BasicKnowledge/ComponentCommunication/ParentToChild";
 import ChildToParent from "./pages/Home/BasicKnowledge/ComponentCommunication/ChildToParent";
-import Sibling from "./pages/Home/BasicKnowledge/ComponentCommunication/sibling";
 import Descendant from "./pages/Home/BasicKnowledge/ComponentCommunication/descendant";
 import NonRealtionalComponent from "./pages/Home/BasicKnowledge/ComponentCommunication/Non-relational";
+import ParentToChild from "./pages/Home/BasicKnowledge/ComponentCommunication/ParentToChild";
+import Sibling from "./pages/Home/BasicKnowledge/ComponentCommunication/sibling";
 import NotFound from "./pages/NotFound";
 
 export default function App() {
@@ -47,6 +50,11 @@ export default function App() {
         <Route path="blogs" element={<Blogs />} />
         <Route path="register" element={<Register />} />
         <Route path="zustand" element={<ZustandComponent />} />
+
+        <Route path="charts" element={<Charts />}>
+          <Route path="lineChart" element={<LineChart />} />
+          <Route path="canvasConponent" element={<CanvasConponent />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
       {/* <Routes>

@@ -25,6 +25,9 @@ const Navbar = () => {
       <NavLink style={navLinkStyles} to="/zustand">
         zustand
       </NavLink>
+      <NavLink style={navLinkStyles} to="/charts">
+        charts
+      </NavLink>
     </nav>
   );
 };
