@@ -29,6 +29,9 @@ export default function Home() {
           <li>
             <Link to="nonRealtional">非关系组件传递</Link>
           </li>
+          <li>
+            <Link to="eventmechanism">事件机制</Link>
+          </li>
         </nav>
       </div>
       <div className="right-contain">

@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 export default function CanvasConponent(params) {
-  const canvasRef = React.useRef();
+  const canvasRef = React.useRef(null);
   const draw = () => {
     var canvas = document.getElementById("tutorial");
     if (!canvas.getContext) return;
@@ -21,7 +21,7 @@ export default function CanvasConponent(params) {
       id="tutorial"
       ref={canvasRef}
       width={window.innerWidth - 200}
-      height={window.innerHeight - 400}
+      height={window.innerHeight - 200}
       onClick={(e) => {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext("2d");

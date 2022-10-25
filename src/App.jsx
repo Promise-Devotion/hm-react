@@ -22,6 +22,7 @@ import Descendant from "./pages/Home/BasicKnowledge/ComponentCommunication/desce
 import NonRealtionalComponent from "./pages/Home/BasicKnowledge/ComponentCommunication/Non-relational";
 import ParentToChild from "./pages/Home/BasicKnowledge/ComponentCommunication/ParentToChild";
 import Sibling from "./pages/Home/BasicKnowledge/ComponentCommunication/sibling";
+import EventMechanism from "./pages/Home/BasicKnowledge/Basic/Eventmechanism";
 import NotFound from "./pages/NotFound";
 
 export default function App() {
@@ -45,6 +46,7 @@ export default function App() {
             path="nonRealtional"
             element={<NonRealtionalComponent />}
           ></Route>
+          <Route path="eventmechanism" element={<EventMechanism />} />
         </Route>
         <Route path="noPage" element={<NoPage />} />
         <Route path="blogs" element={<Blogs />} />
