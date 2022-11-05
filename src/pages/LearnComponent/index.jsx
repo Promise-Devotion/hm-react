@@ -47,7 +47,7 @@ export default function LearnComponent() {
         <br />
         除了可以传字符串，数字，还可以传递对象，数组甚至是回调函数，如下：
         <br />
-        return h1 Hello this.props.name h1;
+        return &lt;h1 Hello this.props.name &lt;h1;
         <br />
         const element = " " Welcome name="Sara" onNameChanged= this.handleName ;
       </div>

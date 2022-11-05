@@ -12,6 +12,9 @@ export default function Home() {
             <Link to="basic">basic</Link>
           </li>
           <li>
+            <Link to="component">组件介绍</Link>
+          </li>
+          <li>
             <Link to="communication">组件通信</Link>
           </li>
           <li>

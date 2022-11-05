@@ -28,6 +28,12 @@ const Navbar = () => {
       <NavLink style={navLinkStyles} to="/charts">
         charts
       </NavLink>
+      <NavLink style={navLinkStyles} to="/contact">
+        contact
+      </NavLink>
+      <NavLink style={navLinkStyles} to="/todolist">
+        todolist
+      </NavLink>
     </nav>
   );
 };

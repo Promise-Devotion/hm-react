@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import './Item.scss';
-import {string} from 'prop-types';
+import React, { Component } from "react";
+import "./Item.scss";
 
 export default class Item extends Component {
   state = {
@@ -10,28 +9,29 @@ export default class Item extends Component {
     updateTodo: Function,
     handleDelete: Function,
     todo: Object,
-    name: string,
+    name: String,
     done: Boolean,
-    id: string
-  }
+    id: String,
+  };
   handleCheck = (id) => (event) => {
     this.props.updateTodo(id, event.target.checked);
   };
   deleteItem = (id) => {
-    if (window.confirm('确定吗？')) {
+    if (window.confirm("确定吗？")) {
       this.props.handleDelete(id);
     }
   };
   handleMouse = (flag) => () => {
     this.setState({ mouseFlag: flag });
   };
-  render () {
+  render() {
     const { todo } = this.props;
+    console.log(todo);
     // const { mouseFlag } = this.state;
     return (
       <li
         style={{
-          backgroundColor: this.state.mouseFlag === true ? 'red' : 'white',
+          backgroundColor: this.state.mouseFlag === true ? "red" : "white",
         }}
         className="item-contain"
         onMouseEnter={this.handleMouse(true)}

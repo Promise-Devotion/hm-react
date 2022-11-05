@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-import "./addinput.scss";
+// import "./addinput.scss";
 
 export default function AddInput(props) {
   const { isInputShow, addItem } = props,
@@ -26,4 +26,3 @@ export default function AddInput(props) {
     ""
   );
 }
-

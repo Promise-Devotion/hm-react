@@ -10,7 +10,7 @@ export default function Charts() {
             <Link to="lineChart">柱状图echart</Link>
           </li>
           <li>
-            <Link to="canvasConponent">canvas学习</Link>
+            <Link to="canvasComponent">canvas学习</Link>
           </li>
         </nav>
       </div>
