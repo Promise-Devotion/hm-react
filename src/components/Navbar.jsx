@@ -34,6 +34,9 @@ const Navbar = () => {
       <NavLink style={navLinkStyles} to="/todolist">
         todolist
       </NavLink>
+      <NavLink style={navLinkStyles} to="/swrpage">
+        swrpage
+      </NavLink>
     </nav>
   );
 };

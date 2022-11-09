@@ -24,6 +24,7 @@ import ParentToChild from "./pages/Home/BasicKnowledge/ComponentCommunication/Pa
 import Sibling from "./pages/Home/BasicKnowledge/ComponentCommunication/sibling";
 import EventMechanism from "./pages/Home/BasicKnowledge/Basic/Eventmechanism";
 import NotFound from "./pages/NotFound";
+import Swrpage from "./pages/Swrpage";
 
 export default function App() {
   return (
@@ -55,6 +56,7 @@ export default function App() {
         <Route path="register" element={<Register />} />
         <Route path="zustand" element={<ZustandComponent />} />
         <Route path="todolist" element={<Todolist />} />
+        <Route path="swrpage" element={<Swrpage />} />
 
         <Route path="charts" element={<Charts />}>
           <Route path="lineChart" element={<LineChart />} />
