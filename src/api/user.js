@@ -1,16 +1,11 @@
-import axios from "axios";
-import useSWR from "swr";
+import service from "../service/request";
 
-export default function useUser ( id ) {
-	const baseUrl = "http://127.0.0.1:5000/api";
-	const url = `${ baseUrl }/users/userlist?name=jim`;
-	
-	const fetcher = axios.get(url).then((res) => res.data);
-  const { data, error } = useSWR("/users/userlist?name=jim", fetcher);
+export default function queryUser ( params ) {
 
-  return {
-    user: data,
-    isLoading: !error && !data,
-    isError: error,
-  };
+  return service({
+    url: "/users/userlist?name=jim",
+    // burl: 'http://47.103.86.227:10120/global-manager',
+    method: "get",
+    params,
+  });
 }

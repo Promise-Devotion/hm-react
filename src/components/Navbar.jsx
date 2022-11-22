@@ -37,6 +37,9 @@ const Navbar = () => {
       <NavLink style={navLinkStyles} to="/swrpage">
         swrpage
       </NavLink>
+      <NavLink style={navLinkStyles} to="/httpdemo">
+        httpdemo
+      </NavLink>
     </nav>
   );
 };
