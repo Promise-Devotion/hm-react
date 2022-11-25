@@ -2,7 +2,7 @@ import axios from "axios";
 
 // 导出Request，可以用来自定义传递配置来创建实例
 const service = axios.create({
-  baseURL: "http://127.0.0.1:5000/api", // process.env.BASEURL,
+  baseURL: process.env.REACT_APP_BASEURL, // "http://127.0.0.1:5000/api",
   timeout: 15000, // 请求超时时间
 });
 

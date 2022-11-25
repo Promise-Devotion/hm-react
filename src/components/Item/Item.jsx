@@ -1,57 +1,45 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./Item.scss";
 
-export default class Item extends Component {
-  state = {
-    mouseFlag: false,
+export default function Item(props) {
+  const { todo } = props;
+
+  // mouseFlag: false,
+  const [mouseFlag, setmouseFlag] = useState(false);
+  const handleCheck = (id) => (event) => {
+    props.updateTodo(id, event.target.checked);
   };
-  static propTypes = {
-    updateTodo: Function,
-    handleDelete: Function,
-    todo: Object,
-    name: String,
-    done: Boolean,
-    id: String,
-  };
-  handleCheck = (id) => (event) => {
-    this.props.updateTodo(id, event.target.checked);
-  };
-  deleteItem = (id) => {
+  const deleteItem = (id) => {
     if (window.confirm("确定吗？")) {
-      this.props.handleDelete(id);
+      props.handleDelete(id);
     }
   };
-  handleMouse = (flag) => () => {
-    this.setState({ mouseFlag: flag });
+  const handleMouse = (flag) => () => {
+    setmouseFlag(flag);
   };
-  render() {
-    const { todo } = this.props;
-    console.log(todo);
-    // const { mouseFlag } = this.state;
-    return (
-      <li
-        style={{
-          backgroundColor: this.state.mouseFlag === true ? "red" : "white",
+  return (
+    <li
+      style={{
+        backgroundColor: mouseFlag === true ? "red" : "white",
+      }}
+      className="item-contain"
+      onMouseEnter={handleMouse(true)}
+      onMouseLeave={handleMouse(false)}
+    >
+      <input
+        type="checkbox"
+        checked={todo.done}
+        onChange={handleCheck(todo.id)}
+      />
+      <label>{todo.name}</label>
+      <button
+        className="button"
+        onClick={() => {
+          deleteItem(todo.id);
         }}
-        className="item-contain"
-        onMouseEnter={this.handleMouse(true)}
-        onMouseLeave={this.handleMouse(false)}
       >
-        <input
-          type="checkbox"
-          checked={todo.done}
-          onChange={this.handleCheck(todo.id)}
-        />
-        <label>{todo.name}</label>
-        <button
-          className="button"
-          onClick={() => {
-            this.deleteItem(todo.id);
-          }}
-        >
-          删除
-        </button>
-      </li>
-    );
-  }
+        删除
+      </button>
+    </li>
+  );
 }
