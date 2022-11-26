@@ -19,7 +19,7 @@ export default function HttpDemo(params) {
             <p key={item._id}>
               <span>{item._id}</span>---
               <span>{item.name}</span>---
-              <span>{item.email}</span>---
+              <span>{item.email}</span>
             </p>
           );
         })}
