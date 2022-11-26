@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { nanoid } from "nanoid";
 // import "./App.css";
 // import Header from "../../components/Top";
 import AddInput from "../../components/addinput/addinput";
@@ -6,17 +7,19 @@ import List from "../../components/List/List";
 import Footer from "../../components/Footer/Footer";
 
 export default function Todolist(params) {
-  const [todos, setTodos] = useState([
-    { id: "0001", name: "吃饭", done: true },
-    { id: "0002", name: "睡觉", done: false },
-    { id: "0003", name: "踢足球", done: true },
-    { id: "0004", name: "逛街", done: false },
-  ]);
+  let arr = localStorage.getItem("todos");
+  if (arr) {
+    arr = JSON.parse(arr);
+  } else {
+    arr = [];
+  }
+  const [todos, setTodos] = useState(arr);
 
   const addTodo = (data) => {
     const todaData = todos;
-    const newData = [...todaData, { id: "000005", name: data, done: false }];
+    const newData = [...todaData, { id: nanoid(), name: data, done: false }];
     setTodos(newData);
+    localStorage.setItem("todos", JSON.stringify(newData));
   };
   const updateTodo = (id, done) => {
     const newData = todos.map((item) => {
@@ -27,10 +30,12 @@ export default function Todolist(params) {
       }
     });
     setTodos(newData);
+    localStorage.setItem("todos", JSON.stringify(newData));
   };
   const deletetodo = (id) => {
     const newTodos = todos.filter((item) => item.id !== id);
     setTodos(newTodos);
+    localStorage.setItem("todos", JSON.stringify(newTodos));
   };
   const checkAll = (done) => {
     const newTodo = todos.map((todoobj) => {
@@ -39,11 +44,13 @@ export default function Todolist(params) {
       return obj;
     });
     setTodos(newTodo);
+    localStorage.setItem("todos", JSON.stringify(newTodo));
   };
   // 清楚全部已完成的
   const clearAllDone = () => {
     const newTodo = todos.filter((todoobj) => !todoobj.done);
     setTodos(newTodo);
+    localStorage.setItem("todos", JSON.stringify(newTodo));
   };
   return (
     <div className="app-container">

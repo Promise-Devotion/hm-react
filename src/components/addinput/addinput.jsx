@@ -6,12 +6,13 @@ export default function AddInput(props) {
   const { addItem } = props,
     inputRef = useRef();
 
-  const submitValue = () => {
+  const submitValue = (e) => {
     const inputValue = inputRef.current.value;
     if (!inputValue.trim()) {
       return;
     } else {
       addItem(inputValue.trim());
+      inputRef.current.value = "";
     }
   };
 
